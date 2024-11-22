@@ -1,17 +1,19 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { HeaderComponent } from './components/header/header.component'
+import { FooterComponent } from './components/footer/footer.component';
+import { ReadAllComponent } from './components/read-all/read-all.component';
+import { FinalizadosComponent } from './components/finalizados/finalizados.component';
+import { MatToolbarModule} from '@angular/material/toolbar';
+import { RouterModule } from '@angular/router';
+
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
-  template: `
-    <h1>Welcome to {{title}}!</h1>
-
-    <router-outlet />
-  `,
-  styles: [],
+  templateUrl: 'app.component.html',
+  imports: [HeaderComponent,ReadAllComponent, FooterComponent, MatToolbarModule, RouterModule, FinalizadosComponent]
 })
 export class AppComponent {
   title = 'todoFront';
 }
+
